@@ -54,3 +54,5 @@ group :production do
   # Use postgres as the database for Active Record
   gem 'pg'
 end
+
+gem "font-awesome-rails"
