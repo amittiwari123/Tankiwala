@@ -2,48 +2,16 @@
 <html>
 <head>
 	
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tankiwala</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Tankiwala</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "layouts/header" %>
-<%= yield %>
-<footer class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-				<h2>Tankiwala</h2>
-		        <h4><i class="fa fa-phone"></i>  9876543210</h4>
-		        <h4><i class="fa fa-envelope"></i>  contact@tankiwala.com</h4>
-			</div>
-			<div class="col-md-4">
-				<h3 class="">We are available on </h3>
-				<div class="row">
-		        	<div class="col-md-2">
-		        		<h1><i class="fa fa-facebook"></i></h1>
-		        	</div>
-		        	<div class="col-md-2">
-		        		<h1><i class="fa fa-twitter"></i></h1>
-		        	</div>
-		        	<div class="col-md-2">
-		        		<h1><i class="fa fa-youtube"></i></h1>
-		        	</div>
-		        	<div class="col-md-2">
-		        		<h1><i class="fa fa-linkedin"></i></h1>
-		        	</div>
-		        	<div class="col-md-2">
-		        		<h1><i class="fa fa-instagram"></i></h1>
-		        	</div>
-		        </div>
-			</div>
-			<div class="col-md-4">
-			</div>
-		</div>
-    </div>
-</footer>    
+	<%= render "layouts/header" %>
+	<%= yield %>
+	<%= render "layouts/footer"%>
 </body>
 </html>
