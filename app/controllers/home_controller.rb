@@ -3,5 +3,10 @@ class HomeController < ApplicationController
   end
 
   def contact_us
-  end
+
+ end
+ def about_us
+ 	
+ end
+
 end
