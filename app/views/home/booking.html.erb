@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="well">
+    <h1 class="text-center">Select your gas agency</h1>
+  </div>
+  <div class="row">
+    <% @agencies.each do |agency| %>
+      <%= link_to "/gas-distributors?id=#{agency.id}" do %>
+        <div class="col-md-3 company-logo">
+          <%= image_tag agency.company_logo, class: "img-responsive" %>
+        </div>  
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="row">
+	<div class="col-md-6">
+		<table class="table table-striped">
+			<thead>
+				<tr>					
+					<th colspan="2">Your Info</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Consumer No</td>
+					<td><%= current_user.aadhar_uid %></td>
+				</tr>
+				<tr>
+					<td>Distributer Name</td>
+					<td><%= @distributor.name%></td>
+				</tr>
+				<tr>
+					<td>Distributor Address</td>
+					<td><%= @distributor.address%></td>
+				</tr>
+				<tr>
+					<td>Distributor City</td>
+					<td><%= @distributor.city%></td>
+				</tr>
+				<tr>
+					<td>Distributor Phone</td>
+					<td><%= @distributor.contact%></td>
+				</tr>
+				<tr>
+					<td>Connection Type</td>
+					<td>Domestic</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<div class="form-group">
+			<select class="form-control input-lg" id="payment-method">
+				<option>Select a payment mode</option>
+				<option value="cod">Cash on delivery</option>
+				<option value="mop">Make online payment</option>
+			</select>
+		</div>
+		<div class="row cod-form" style="display:none" id="cashondelivery">
+			<div class="form-group">
+				<label>Write Your Delivery Address Below</label>
+				<textarea class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary btn-lg btn-block">Submit</button>
+			</div>
+		</div>
+		<div class="row mop-form" style="display:none" id="makeonlinepayment">
+			<div class="form-group">
+				<label>Enter your debit/credit number</label>
+				<input type="text" class="form-control input-lg" placeholder="Card Number" name="cc_number">
+				<label>Enter your optional email to get alert</label>
+				<input type="email" class="form-control input-lg" placeholder="Optional Email" name="op_email">
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary btn-lg btn-block">Submit</button>
+			</div>
+		</div>
+		<div class="quick-service">
+			<p>If you are looking for emergency delivery please visit us at <a href="/quick-service">Quick Service</a></p>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('#payment-method').on('change', function() {
+      if ( this.value == 'cod')
+      {
+        $("#cashondelivery").show();
+        $("#makeonlinepayment").hide();
+      }
+      else
+      {
+        $("#cashondelivery").hide();
+        $("#makeonlinepayment").show();
+      }
+    });
+});
+</script>

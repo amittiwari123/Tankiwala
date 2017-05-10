@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411134432) do
+ActiveRecord::Schema.define(version: 20170510111515) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,32 @@ ActiveRecord::Schema.define(version: 20170411134432) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "distributors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "contact"
+    t.string   "email"
+    t.string   "city"
+    t.string   "state"
+    t.text     "address"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "gas_company_id"
+    t.integer  "location_id"
+  end
+
+  create_table "gas_companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "company_logo"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -45,6 +71,10 @@ ActiveRecord::Schema.define(version: 20170411134432) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "middle_name"
@@ -52,6 +82,8 @@ ActiveRecord::Schema.define(version: 20170411134432) do
     t.string   "aadhar_uid"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "location_id"
+    t.integer  "distributor_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

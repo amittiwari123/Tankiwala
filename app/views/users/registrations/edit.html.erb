@@ -27,6 +27,16 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.select :location_id, options_for_select(Location.all.collect {|p| [ p.name, p.id ] },(f.object.try(:location_id))),{include_blank: 'None'}, { :class => ' input-lg'} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :distributor_id %><br>
+    <%= f.select :distributor_id, options_for_select(Distributor.all.collect {|p| [ p.name, p.id ] },(f.object.try(:distributor_id))),{include_blank: 'None'}, { :class => ' input-lg'} %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

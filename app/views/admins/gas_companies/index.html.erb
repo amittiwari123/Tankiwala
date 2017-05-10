@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Gas Companies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company logo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gas_companies.each do |gas_company| %>
+      <tr>
+        <td><%= gas_company.name %></td>
+        <td><%= gas_company.company_logo %></td>
+        <td><%= link_to 'Show', admins_gas_company_path(gas_company) %></td>
+        <td><%= link_to 'Edit', edit_admins_gas_company_path(gas_company) %></td>
+        <td><%= link_to 'Destroy', admins_gas_company_path(gas_company), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gas company', new_admins_gas_company_path %>

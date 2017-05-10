@@ -1,0 +1,1 @@
+json.array! @gas_companies, partial: 'gas_companies/gas_company', as: :gas_company

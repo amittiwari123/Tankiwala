@@ -1,0 +1,34 @@
+<div class="row navigators">
+  <% if user_signed_in? %>
+    <%= link_to '/booking' do %>
+      <div class="col-md-2">
+        <%= image_tag 'book.png', class: "img-responsive"%>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <div class="col-md-2">
+        <%= image_tag 'book.png', class: "img-responsive"%>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to new_user_registration_path do %>
+    <div class="col-md-2">
+      <%= image_tag 'register_connection.png', class: "img-responsive"%>
+    </div>
+  <% end %>
+  <div class="col-md-2">
+    <%= image_tag 'audit.png', class: "img-responsive"%>
+  </div>
+  <%= link_to "/join-pahal" do %>
+    <div class="col-md-2">
+      <%= image_tag 'joinpahal.png', class: "img-responsive"%>
+    </div>
+  <% end %>
+  <div class="col-md-2">
+    <%= image_tag 'give.png', class: "img-responsive"%>
+  </div>
+  <div class="col-md-2">
+    <%= image_tag 'buy.png', class: "img-responsive"%>
+  </div>
+</div>

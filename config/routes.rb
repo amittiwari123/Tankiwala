@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+ 
+  
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', passwords: 'users/passwords', confirmations: 'users/confirmations', unlocks: 'users/unlocks' }
 
 
@@ -7,7 +10,16 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/contact-us' => 'home#contact_us'
   get '/about-us' => 'home#about_us'
-
+  get '/join-pahal' => 'home#join_pahal'
+  get '/booking' => 'home#booking'
+  get '/gas-distributors' => 'home#gas_distributors'
+  get '/book-your-cylinder' => 'home#book_your_cylinder'
+  get '/quick-service' => "home#quick_service"
+  namespace :admins do 
+    resources :distributors
+    resources :gas_companies
+    resources :locations
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,67 @@
+<div class="row">
+	<div class="col-md-4">
+		<table class="table table-striped">
+			<thead>
+				<tr>					
+					<th colspan="2">Your Info</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Consumer No</td>
+					<td><%= current_user.aadhar_uid %></td>
+				</tr>
+				<tr>
+					<td>Distributer Name</td>
+					<td><%= @distributor.name%></td>
+				</tr>
+				<tr>
+					<td>Distributor Address</td>
+					<td><%= @distributor.address%></td>
+				</tr>
+				<tr>
+					<td>Distributor City</td>
+					<td><%= @distributor.city%></td>
+				</tr>
+				<tr>
+					<td>Distributor Phone</td>
+					<td><%= @distributor.contact%></td>
+				</tr>
+				<tr>
+					<td>Connection Type</td>
+					<td>Domestic</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-md-5 well">
+		<h3 class="text-center">Services Available</h3>
+		<ul>
+			<li>Online Retail Booking</li>
+			<li>Hotplate rapair online request</li>
+			<li>Online DBC booking</li>
+			<li>New connection online request</li>
+		</ul>
+		<div class="row">
+			<%= link_to "/book-your-cylinder" do %>
+				<div class="col-md-3">
+					<%= image_tag "ordernow.jpg", class: "img-responsive" %>
+				</div>
+			<% end %>
+			<div class="col-md-3">
+				<%= image_tag "orderhistory.png", class: "img-responsive" %>
+			</div>
+			<div class="col-md-3">
+				<%= image_tag "profile.png", class: "img-responsive" %>
+			</div>
+			<div class="col-md-3">
+				<%= image_tag "adhaar.png", class: "img-responsive" %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3 well">
+		<%= link_to "Surrender the connection","#", class: "btn btn-primary btn-block"%>
+		<%= link_to "Rate your distributor", "#",class: "btn btn-primary btn-block"%>
+		<%= link_to "I want to give up subsidy", "#",class: "btn btn-primary btn-block"%>
+	</div>	
+</div>

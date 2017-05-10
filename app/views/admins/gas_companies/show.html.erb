@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gas_company.name %>
+</p>
+
+<p>
+  <strong>Company logo:</strong>
+  <%= @gas_company.company_logo %>
+</p>
+
+<%= link_to 'Edit', edit_admins_gas_company_path(@gas_company) %> |
+<%= link_to 'Back', admins_gas_companies_path %>

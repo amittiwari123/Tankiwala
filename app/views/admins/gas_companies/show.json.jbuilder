@@ -1,0 +1,1 @@
+json.partial! "gas_companies/gas_company", gas_company: @gas_company
