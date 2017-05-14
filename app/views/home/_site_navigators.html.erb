@@ -25,10 +25,14 @@
       <%= image_tag 'joinpahal.png', class: "img-responsive"%>
     </div>
   <% end %>
-  <div class="col-md-2">
-    <%= image_tag 'give.png', class: "img-responsive"%>
-  </div>
-  <div class="col-md-2">
-    <%= image_tag 'buy.png', class: "img-responsive"%>
-  </div>
+  <%= link_to "/contact-us" do %>
+    <div class="col-md-2">
+      <%= image_tag 'give.png', class: "img-responsive"%>
+    </div>
+  <% end %>
+  <%= link_to "/buy-5kg-cylinder" do %>
+    <div class="col-md-2">
+      <%= image_tag 'buy.png', class: "img-responsive"%>
+    </div>
+  <% end %>
 </div>

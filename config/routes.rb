@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/gas-distributors' => 'home#gas_distributors'
   get '/book-your-cylinder' => 'home#book_your_cylinder'
   get '/quick-service' => "home#quick_service"
+  get '/buy-5kg-cylinder' => "home#buy_five_kg_cylinder"
   namespace :admins do 
     resources :distributors
     resources :gas_companies

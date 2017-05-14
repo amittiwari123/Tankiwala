@@ -27,4 +27,10 @@ class HomeController < ApplicationController
     @distributor = Distributor.find_by(:id => current_user.distributor.id)
   end
 
+  def quick_service
+  end
+
+  def buy_five_kg_cylinder
+  end
+
 end
